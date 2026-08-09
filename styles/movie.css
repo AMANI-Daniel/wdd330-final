@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-font: Roboto;
+    --secondary-font: Arial,
+        Helvetica,
+        sans-serif;
+}
+body{
+    font-family: var(--primary-font);
+    background-color: #F5F7FA;
+}
+
+/*Styling the header*/
+
+header {
+    padding: 10px;
+    margin: .5rem;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 80px auto;
+    border-bottom: 5px solid #161c30;
+
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+
+    }
+
+    & span {
+        font-size: 1rem;
+        color: #161c30;
+
+    }
+
+    @media screen and (min-width: 32rem) {
+        grid-template-columns: 160px auto;
+
+        & span {
+            font-size: 2rem;
+            padding: 10px;
+        }
+    }
+}
+/*Styling the main tag*/
+
+.main-hero {
+
+    width: 90%;
+    margin: 0 auto;
+    & h1 {
+        font-size: 1rem;
+        color: #161c30;
+        padding: 1rem;
+    }
+
+    @media screen and (min-width: 32rem) {
+        & h1 {
+            font-size: 7rem;
+            color: #161c30;
+            padding: 1rem;
+        }
+    }
+}
+/*Styling to direct to movies*/
+.btn{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin: 1rem;
+    border: 2px solid green;
+    color: green;
+
+    &:hover {
+        cursor: pointer;
+        background-color: green;
+        color: white;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+}
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+}
+
+/*style the cards*/
+
+#cards{
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    
+    @media screen and (min-width: 32rem) {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+}
+
+.movie{
+    border: 1px solid grey;
+    background-color: #161c30;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+
+    & h4{
+        padding: 10px;
+        color: white;
+    }
+    
+}
+
+
+/*Style the footer*/
+footer{
+    padding: 10px;
+    & p {
+        font-size: 1.2rem;
+        color: #161c30;
+    
+        }
+}

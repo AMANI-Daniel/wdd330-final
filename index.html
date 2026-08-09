@@ -3,23 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="styles/volley.css">
-    <link href="https://cdn.Volleyball Summer Hubjsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" href="images/logo.ico">
+    <title>Movie Summer Hub</title>
+    <meta name="description" content="The is app is for allowing people to get indian movies, series movies, top Tv shows and help people to watch the movies at their offical websites.">
+    <meta name="author" content="AMANI Daniel">
+    <meta property="og:title" content="Movie Summer Hub">
+    <meta property="og:description" content="The is app is for allowing people to get indian movies, series movies, top Tv shows and help people to watch the movies at their offical websites.">
 
-    <script src="scripts/main.js" defer></script>
+
+    <link rel="stylesheet" href="styles/movie.css">
+    </head>
+    <script type="module" src="scripts/main.mjs"></script>
 </head>
 <body>
-    <header>
-        <a href="index.html"><img src="images/volleylogo.svg" alt="summer hub logo" width="500" height="333" loading="lazy"></a>
-        <span>Volleyball Summer Hub</span>
+    <header id="main-header">
+        <a href="index.html"><img src="images/logo.svg" alt="summer hub logo" width="500" height="333" loading="lazy"></a>
+        <span>Movie Summer Hub</span>
     </header>
     <main class="main-hero">
         <h1 class="hero"></h1>
+        <div>
+            <button class="btn" id="trend">Trending Movies</button>
+            <button class="btn" id="indian">Indian Movies</button>
+            <button class="btn" id="topMovies">Top 250 Movies</button>
+            <button class="btn" id="topShows"> Top 250 Tv Shows</button>
+            <button class="btn" id="favorites"> Favorites</button>
+        </div>
+
+        <div id="cards"></div>
+
+        <dialog id="movieBox"></dialog>
+
     </main>
-    <footer>
-        <p>&copy;<span id="year"></span> || Volleyball Summer Hub</p>  
+    <footer id="main-footer">
+        <p>&copy;<span id="year"></span> || Movie Summer Hub</p>
     </footer>
 </body>
 </html>
