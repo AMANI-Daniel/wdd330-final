@@ -115,11 +115,65 @@ header {
     padding: 10px;
     text-align: center;
 
-    & h4{
+    & h3{
         padding: 10px;
         color: white;
     }
     
+}
+/*Style the modal for each movie*/
+
+#movieBox{
+    width: 320px;
+    margin: 1rem auto;
+    padding: 10px;
+    border-radius: 10px;
+
+   & img{
+        display: block;
+        margin: 0 auto;
+   }
+
+    & h3{
+        padding: 10px;
+        text-align: center;
+        border-bottom: 2px solid grey;
+        margin-bottom: 1rem;
+    }
+
+    & p{
+        padding: 10px;
+    }
+
+    & a{
+        margin: 10px;
+        font-size: 1.2rem;
+    }
+}
+#closeModal{
+    font-size: 2rem;
+    border: none;
+    background: none;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+
+}
+
+#favorite{
+    display: block;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    &:hover{
+        background-color: #161c30;
+        color: white;
+    }
+
 }
 
 

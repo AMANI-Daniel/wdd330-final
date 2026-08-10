@@ -153,7 +153,7 @@ function displaySeriesMovies(cards, movies) {
        
         const card = document.createElement('div');
         card.classList.add('movie');
-        const movieName = document.createElement('h4');
+        const movieName = document.createElement('h3');
         movieName.textContent = x.Series_Title;
         const photo = document.createElement("img");
         photo.src = x.Poster_Link;
@@ -165,14 +165,14 @@ function displaySeriesMovies(cards, movies) {
             dialogBox.innerHTML = `
 
                 <button id="closeModal">❌</button>
-                <h4>${x.Series_Title}</h4>
+                <h3>${x.Series_Title}</h3>
                 <img src="${x.Poster_Link}" alt="${x.Series_Title}">
                 <p><strong>Director:</strong> ${x.Director}</p>
                 <p><strong>Actors:</strong> ${x.Star1}, ${x.Star2}, ${x.Star3}, ${x.Star4}</p>
                 <p><strong>Genre:</strong> ${x.Genre}</p>
                 <p><strong>Runtime</strong> ${x.Runtime}</p>
                 <p><strong>Overview:</strong> ${x.Overview}</p>
-                <button id="favorite">Add To Favorite</button>
+                <button id="favorite">Add to favorite</button>
             
             `;
             dialogBox.showModal();
@@ -202,7 +202,7 @@ function cardTemplate(cards, movies) {
         const card = document.createElement('div');
         card.classList.add('movie');
         const photo = document.createElement("img");
-        const movieName = document.createElement('h4');
+        const movieName = document.createElement('h3');
         movieName.innerHTML = x.primaryTitle
         photo.src = x.primaryImage;
         photo.alt = x.primaryTitle;
@@ -214,13 +214,13 @@ function cardTemplate(cards, movies) {
             dialogBox.innerHTML = "";
             dialogBox.innerHTML = `
                 <button id="closeModal">❌</button>
-               <h4>${x.primaryTitle}</h4>
+               <h3>${x.primaryTitle}</h3>
                <img src="${x.primaryImage}" alt="${x.primaryTitle}" width="300" height="200">
                <p><strong>Description:</strong> ${x.description}</p>
                <p><strong>Released Date:</strong> ${x.releaseDate}</p>
                <p><strong>Type:</strong> ${x.type}</p>
                <a href="${x.trailer}">Watch trailer</a>
-               <button id="favorite">Add To Favorite</button>
+               <button id="favorite">Add to favorite</button>
 
         
             `;
