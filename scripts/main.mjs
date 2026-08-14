@@ -1,5 +1,6 @@
 
-import {showSeriesMovie, showIndianMovies, show250Movies, showTvShows } from "./showMovie.mjs";
+import { showSeriesMovie, showIndianMovies, show250Movies, showTvShows } from "./showMovie.mjs";
+import { showFavorites } from "./favorites.mjs";
 
 const text = 'Welcome to Movie and TV Shows Summer Hub!!';
 
@@ -17,7 +18,7 @@ function displayWelcomeText() {
         }
     }, 100);
 }
-document.addEventListener('DOMContentLoaded', displayWelcomeText());
+document.addEventListener('load', displayWelcomeText());
 
 
 const cards = document.querySelector('#cards');
@@ -50,6 +51,11 @@ topShows.addEventListener('click', () => {
     cards.innerHTML = "";
     showTvShows(cards, 'topshows');
 });
+const favorites = document.getElementById('favorites');
+favorites.addEventListener('click', () => {
+    cards.innerHTML = "";
+    showFavorites(cards);
+ });
 
 export let dialogBox = document.getElementById('movieBox');
 

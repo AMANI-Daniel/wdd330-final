@@ -1,4 +1,5 @@
-import { dialogBox } from "./main.mjs";
+
+import { trendDialog, otherMovieDialog } from "./dialog.mjs";
 
 //Function to fetch series movie data
 export async function showSeriesMovie(cards, key) {
@@ -135,12 +136,12 @@ export async function showIndianMovies(cards, key) {
 
 
 //Storing the fetched data to the localStorage
-function setLocalStorage(key, data) {
+export function setLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 
 }
 //Geting data stored on localStorage
-function getLocalStorage(keyword) {
+export function getLocalStorage(keyword) {
     return JSON.parse(localStorage.getItem(keyword)) || [];
 }
 
@@ -160,28 +161,10 @@ function displaySeriesMovies(cards, movies) {
         photo.alt = x.Series_Title;
         photo.loading = 'lazy';
         
+        // Create a dialog it the the image is clikcked
         photo.addEventListener('click', () => {
-            dialogBox.innerHTML = "";
-            dialogBox.innerHTML = `
-
-                <button id="closeModal">❌</button>
-                <h3>${x.Series_Title}</h3>
-                <img src="${x.Poster_Link}" alt="${x.Series_Title}">
-                <p><strong>Director:</strong> ${x.Director}</p>
-                <p><strong>Actors:</strong> ${x.Star1}, ${x.Star2}, ${x.Star3}, ${x.Star4}</p>
-                <p><strong>Genre:</strong> ${x.Genre}</p>
-                <p><strong>Runtime</strong> ${x.Runtime}</p>
-                <p><strong>Overview:</strong> ${x.Overview}</p>
-                <button id="favorite">Add to favorite</button>
-            
-            `;
-            dialogBox.showModal();
-
-            closeModal.addEventListener('click', () => { 
-                dialogBox.close();
-            });
-
-        });
+            trendDialog(x);
+         });
 
         photo.addEventListener('error', () => {
             card.remove();
@@ -210,29 +193,10 @@ function cardTemplate(cards, movies) {
         photo.height = '200';
         photo.loading = 'lazy';
 
+        //Create a dialog if the image is clicked
         photo.addEventListener('click', () => { 
-            dialogBox.innerHTML = "";
-            dialogBox.innerHTML = `
-                <button id="closeModal">❌</button>
-               <h3>${x.primaryTitle}</h3>
-               <img src="${x.primaryImage}" alt="${x.primaryTitle}" width="300" height="200">
-               <p><strong>Description:</strong> ${x.description}</p>
-               <p><strong>Released Date:</strong> ${x.releaseDate}</p>
-               <p><strong>Type:</strong> ${x.type}</p>
-               <a href="${x.trailer}">Watch trailer</a>
-               <button id="favorite">Add to favorite</button>
-
-        
-            `;
-
-            dialogBox.showModal();
-            closeModal.addEventListener('click', () => {
-                dialogBox.close();
-            });
+            otherMovieDialog(x);
         });
-
-
-
 
         photo.addEventListener('error', () => {
             card.remove();
@@ -240,5 +204,6 @@ function cardTemplate(cards, movies) {
         card.appendChild(movieName);
         card.appendChild(photo);
         cards.appendChild(card);
+
     });
 }
