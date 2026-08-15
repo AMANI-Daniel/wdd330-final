@@ -10,12 +10,11 @@ export async function showSeriesMovie(cards, key) {
         return;
     }
 
-
     const url = 'https://imdb-top-1000-movies-series.p.rapidapi.com/byrating';
     const options = {
         method: 'POST',
         headers: {
-            'x-rapidapi-key': '82b4520b76msha7c842a73547beap11105ejsn0ee04da9dfc2',
+            'x-rapidapi-key': 'ffda89c5admsh288468387bf8548p199f45jsnb800a37c89cb',
             'x-rapidapi-host': 'imdb-top-1000-movies-series.p.rapidapi.com',
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -28,10 +27,9 @@ export async function showSeriesMovie(cards, key) {
     try {
         const response = await fetch(url, options);
         const data = await response.json();
-        // console.log(data.result);
+        // console.log(result);
         setLocalStorage(key, data.result);
         displaySeriesMovies(cards, data.result);
-
     } catch (error) {
         console.error(error);
     }
@@ -54,7 +52,7 @@ export async function showTvShows(cards, key) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '82b4520b76msha7c842a73547beap11105ejsn0ee04da9dfc2',
+            'x-rapidapi-key': 'ffda89c5admsh288468387bf8548p199f45jsnb800a37c89cb',
             'x-rapidapi-host': 'imdb236.p.rapidapi.com',
             'Content-Type': 'application/json'
         }
@@ -63,12 +61,12 @@ export async function showTvShows(cards, key) {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
+        // console.log(result);
         setLocalStorage(key, result);
-        cardTemplate(cards, result)
+        cardTemplate(cards, result);
     } catch (error) {
         console.error(error);
     }
-    
 }
 
 
@@ -86,7 +84,7 @@ export async function show250Movies(cards, key) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '82b4520b76msha7c842a73547beap11105ejsn0ee04da9dfc2',
+            'x-rapidapi-key': 'ffda89c5admsh288468387bf8548p199f45jsnb800a37c89cb',
             'x-rapidapi-host': 'imdb236.p.rapidapi.com',
             'Content-Type': 'application/json'
         }
@@ -95,8 +93,9 @@ export async function show250Movies(cards, key) {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
+        // console.log(result);
         setLocalStorage(key, result);
-        cardTemplate(cards, result)
+        cardTemplate(cards, result);
     } catch (error) {
         console.error(error);
     }
@@ -113,11 +112,11 @@ export async function showIndianMovies(cards, key) {
     }
 
 
-    const url = 'https://imdb236.p.rapidapi.com/api/imdb/cast/nm0000190/titles';
+    const url = 'https://imdb236.p.rapidapi.com/api/imdb/india/top-rated-indian-movies';
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '82b4520b76msha7c842a73547beap11105ejsn0ee04da9dfc2',
+            'x-rapidapi-key': 'ffda89c5admsh288468387bf8548p199f45jsnb800a37c89cb',
             'x-rapidapi-host': 'imdb236.p.rapidapi.com',
             'Content-Type': 'application/json'
         }
@@ -126,9 +125,9 @@ export async function showIndianMovies(cards, key) {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        setLocalStorage(key, result);
-        cardTemplate(cards, result)
         // console.log(result);
+        setLocalStorage(key, result);
+        cardTemplate(cards, result);
     } catch (error) {
         console.error(error);
     }
