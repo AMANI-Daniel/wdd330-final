@@ -80,21 +80,16 @@ header {
         cursor: pointer;
         background-color: green;
         color: white;
-        animation: pulse 2s ease-in-out infinite;
+        transform: scale(1.1);
+    }
+
+    &:focus{
+        background-color: black;
+        color: white;
     }
 
 }
-@keyframes pulse {
 
-    0%,
-    100% {
-        transform: scale(1)
-    }
-
-    50% {
-        transform: scale(1.1)
-    }
-}
 
 /*style the cards*/
 
@@ -115,13 +110,30 @@ header {
     padding: 10px;
     text-align: center;
     position: relative;
+    
 
     & h3{
         padding: 10px;
         color: white;
     }
+
+
+    &:hover{
+        animation: pulse 2s ease-in-out infinite;
+        cursor: pointer;
+    }
     
 }
+
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+      }
+
+      100% {
+          transform: scale(.95);
+      }
+  }
 /*Style the modal for each movie*/
 
 #movieBox{

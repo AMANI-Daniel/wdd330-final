@@ -70,6 +70,7 @@ export function showFavorites(cards) {
 
         message.textContent =
             'There are no favorites, please add favorite movies!';
+        message.style.color = '#161c30';
 
         cards.appendChild(message);
     }

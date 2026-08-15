@@ -59,6 +59,10 @@ favorites.addEventListener('click', () => {
 
 export let dialogBox = document.getElementById('movieBox');
 
+// const buttons = document.querySelector('.btn');
+// buttons.addEventListener('click', () => {
+//     buttons.classList.toggle('active');
+// })
 // Creating dynamic year for the page.
 function showYear() {
     const year = document.querySelector('#year');
